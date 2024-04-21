@@ -4,15 +4,22 @@ import React from "react";
 import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
 
-const Profile = () => {
+const Profile = ({ theme }) => {
   return (
-    <section className="min-h-screen flex flex-col lg:flex-row gap-4 lg:gap-20 justify-center items-center">
+    <section
+      id="profile"
+      className="min-h-screen flex flex-col lg:flex-row gap-4 lg:gap-20 mt-4 sm:mt-0 justify-center items-center"
+    >
       <div className="lg:w-[40vw] flex justify-end items-center">
-        <div className="box size-[63vw] sm:size-[48vw] md:size-[315px] lg:size-[365px] flex items-center justify-center">
+        <div
+          className={`box size-[63vw] sm:size-[48vw] md:size-[315px] lg:size-[365px] flex items-center justify-center ${
+            theme === "dark" ? "after:bg-c-1" : "after:bg-c-4"
+          }`}
+        >
           <img
             src="/images/user.svg"
             alt="John Lester Escarlan's Profile Picture"
-            className="z-10  size-[60vw] sm:size-[45vw] md:size-[300px] lg:size-[350px] border-2 border-3-1000 rounded-full"
+            className="z-10  size-[60vw] sm:size-[45vw] md:size-[300px] lg:size-[350px] border-[3px] border-c-3-1000 rounded-full"
           />
         </div>
       </div>
@@ -31,7 +38,7 @@ const Profile = () => {
             wrapper="span"
             speed={10}
             repeat={Infinity}
-            className="text-3-1000"
+            className="text-c-3-1000"
           />
         </h1>
         <p className="w-[80vw] lg:w-[40vw] text-justify text-base ">
@@ -44,10 +51,10 @@ const Profile = () => {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-2">
-          <button className="px-5 py-3 w-[80vw] sm:w-fit font-bold text-xs uppercase tracking-wider rounded-full bg-3-1000 hover:bg-3-900 hover:scale-105  transition ease-in-out duration-200 hover:bg-left-bottom text-1">
+          <button className="px-5 py-3 w-[80vw] sm:w-fit font-bold text-xs uppercase tracking-wider rounded-full bg-c-3-1000 hover:bg-c-3-900 hover:scale-105  transition ease-in-out duration-200 hover:bg-left-bottom text-c-1">
             Download CV
           </button>
-          <button className="px-5 py-3 w-[80vw] sm:w-fit font-bold text-xs uppercase tracking-wider rounded-full bg-3-1000 hover:bg-3-900 hover:scale-105  transition ease-in-out duration-200 hover:bg-left-bottom text-1">
+          <button className="px-5 py-3 w-[80vw] sm:w-fit font-bold text-xs uppercase tracking-wider rounded-full bg-c-3-1000 hover:bg-c-3-900 hover:scale-105  transition ease-in-out duration-200 hover:bg-left-bottom text-c-1">
             Contact Info
           </button>
         </div>

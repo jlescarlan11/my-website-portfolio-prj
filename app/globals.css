@@ -77,7 +77,6 @@ body {
 .box::after {
   position: absolute;
   content: "";
-  inset: 2px;
+  inset: 3px;
   border-radius: 100rem;
-  background: #222831;
 }
